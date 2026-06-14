@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+mlflow
+fastapi
+uvicorn
+pandera
+python-dotenv
+pytest
+ipykernel
+seaborn
