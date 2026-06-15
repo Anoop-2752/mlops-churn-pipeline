@@ -11,8 +11,8 @@ Run directly:
 
 import sys
 import pandas as pd
-import pandera as pa
-from pandera import Column, DataFrameSchema, Check
+import pandera.pandas as pa
+from pandera.pandas import Column, DataFrameSchema, Check
 
 RAW_DATA_PATH = "data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv"
 
