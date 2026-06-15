@@ -15,3 +15,5 @@ imbalanced-learn
 xgboost
 mlflow==3.13.0
 httpx2
+evidently 
+scipy 
