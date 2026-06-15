@@ -10,3 +10,6 @@ python-dotenv
 pytest
 ipykernel
 seaborn
+mlflow
+imbalanced-learn
+xgboost

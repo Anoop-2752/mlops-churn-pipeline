@@ -35,7 +35,7 @@ raw_schema = DataFrameSchema(
         "Partner": Column(str, Check.isin(["Yes", "No"])),
         "Dependents": Column(str, Check.isin(["Yes", "No"])),
 
-        "tenure": Column(int, Check.in_range(0, 100)),
+        "tenure": Column(int, Check.in_range(0, 72)),
 
         "PhoneService": Column(str, Check.isin(["Yes", "No"])),
 
