@@ -15,6 +15,7 @@ Then visit:
     http://127.0.0.1:8000/docs   (interactive Swagger UI)
 """
 
+import os
 from contextlib import asynccontextmanager
 from typing import Literal
 
@@ -99,6 +100,10 @@ class PredictionResponse(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # --- Startup: load model once ---
+    tracking_uri = os.environ.get("MLFLOW_TRACKING_URI")
+    if tracking_uri:
+        mlflow.set_tracking_uri(tracking_uri)
+
     client = mlflow.tracking.MlflowClient()
     versions = client.get_latest_versions(MODEL_NAME, stages=[MODEL_STAGE])
 

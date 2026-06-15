@@ -13,3 +13,4 @@ seaborn
 mlflow
 imbalanced-learn
 xgboost
+mlflow==3.13.0

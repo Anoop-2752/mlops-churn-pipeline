@@ -16,6 +16,8 @@ Run:
     python src/train.py
 """
 
+import os
+
 import mlflow
 import mlflow.sklearn
 import pandas as pd
@@ -76,6 +78,10 @@ def evaluate(y_true, y_pred, y_proba):
 
 
 def main():
+    tracking_uri = os.environ.get("MLFLOW_TRACKING_URI")
+    if tracking_uri:
+        mlflow.set_tracking_uri(tracking_uri)
+
     mlflow.set_experiment(EXPERIMENT_NAME)
 
     X, y = load_data()

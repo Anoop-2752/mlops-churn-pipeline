@@ -13,6 +13,8 @@ Run:
     python src/register_model.py
 """
 
+import os
+
 import mlflow
 from mlflow.tracking import MlflowClient
 
@@ -22,6 +24,10 @@ SELECTION_METRIC = "roc_auc"  # metric used to pick the best run
 
 
 def main():
+    tracking_uri = os.environ.get("MLFLOW_TRACKING_URI")
+    if tracking_uri:
+        mlflow.set_tracking_uri(tracking_uri)
+
     client = MlflowClient()
 
     experiment = client.get_experiment_by_name(EXPERIMENT_NAME)
